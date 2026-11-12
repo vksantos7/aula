@@ -1,0 +1,35 @@
+:host {
+  margin-top: auto;
+}
+
+footer {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px max(24px, calc((100% - 1120px) / 2));
+  color: #c4cfdf;
+  background: #101a2b;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.92rem;
+}
+
+p {
+  margin: 0;
+}
+
+p:last-child {
+  color: var(--hero-gold);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px;
+  }
+}

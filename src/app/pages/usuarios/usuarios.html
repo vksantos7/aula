@@ -1,0 +1,90 @@
+<section class="users-page">
+  <div class="page-heading">
+    <p class="eyebrow">Painel da equipe</p>
+    <h1>Cadastro de <span>integrantes</span></h1>
+    <p>Adicione pessoas à equipe e mantenha seus contatos organizados.</p>
+  </div>
+
+  <div class="users-layout">
+    <section class="form-card" aria-labelledby="form-title">
+      <div class="card-heading">
+        <span class="card-icon" aria-hidden="true">+</span>
+        <div>
+          <h2 id="form-title">Novo integrante</h2>
+          <p>Preencha os dados para adicionar à equipe.</p>
+        </div>
+      </div>
+
+      <form #formUsuario="ngForm" (ngSubmit)="adicionarUsuario()">
+        <div class="form-field">
+          <label for="nome">Nome completo</label>
+          <input
+            #nomeControl="ngModel"
+            id="nome"
+            name="nome"
+            type="text"
+            [(ngModel)]="nome"
+            autocomplete="name"
+            placeholder="Ex.: Alex Silva"
+            minlength="2"
+            required
+          />
+          @if (nomeControl.invalid && nomeControl.touched) {
+            <span class="field-error">Informe um nome com pelo menos 2 caracteres.</span>
+          }
+        </div>
+
+        <div class="form-field">
+          <label for="email">E-mail</label>
+          <input
+            #emailControl="ngModel"
+            id="email"
+            name="email"
+            type="email"
+            [(ngModel)]="email"
+            autocomplete="email"
+            placeholder="nome@exemplo.com"
+            required
+          />
+          @if (emailControl.invalid && emailControl.touched) {
+            <span class="field-error">Informe um endereço de e-mail válido.</span>
+          }
+        </div>
+
+        <button class="submit-button" type="submit" [disabled]="formUsuario.invalid">
+          Adicionar à equipe <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </section>
+
+    <section class="roster-card" aria-labelledby="roster-title">
+      <div class="roster-heading">
+        <div>
+          <p class="eyebrow">Lista de contatos</p>
+          <h2 id="roster-title">Equipe cadastrada</h2>
+        </div>
+        <span class="member-count" aria-label="{{ usuarios.length }} integrantes">{{ usuarios.length }}</span>
+      </div>
+
+      @if (usuarios.length === 0) {
+        <div class="empty-state">
+          <span class="empty-icon" aria-hidden="true">✦</span>
+          <h3>A equipe está esperando por você</h3>
+          <p>Os integrantes adicionados aparecerão aqui.</p>
+        </div>
+      } @else {
+        <ul class="member-list">
+          @for (usuario of usuarios; track $index) {
+            <li class="member-item">
+              <span class="member-avatar" aria-hidden="true">{{ usuario.nome.charAt(0).toUpperCase() }}</span>
+              <span class="member-info">
+                <strong>{{ usuario.nome }}</strong>
+                <span>{{ usuario.email }}</span>
+              </span>
+            </li>
+          }
+        </ul>
+      }
+    </section>
+  </div>
+</section>

@@ -1,0 +1,226 @@
+.home-page {
+  display: grid;
+  gap: 24px;
+}
+
+.welcome-card {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: clamp(32px, 6vw, 72px);
+  color: #fff;
+  background:
+    radial-gradient(circle at 82% 50%, rgba(49, 88, 147, 0.26), transparent 28%),
+    linear-gradient(120deg, #111c2e 0%, #17243a 62%, #101a2b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 22px 55px rgba(16, 26, 43, 0.16);
+}
+
+.welcome-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 610px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  color: #f3c45c;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  width: 8px;
+  height: 8px;
+  background: var(--hero-red);
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(213, 43, 54, 0.18);
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: clamp(2.35rem, 6vw, 4.25rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.06;
+}
+
+h1 span {
+  color: #f3c45c;
+}
+
+.intro {
+  max-width: 510px;
+  margin: 22px 0 28px;
+  color: #c2cede;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.primary-button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  color: #fff;
+  background: var(--hero-red);
+  border: 1px solid #ee4b55;
+  border-radius: 9px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(213, 43, 54, 0.25);
+  transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.primary-button:hover,
+.primary-button:focus-visible {
+  background: #bb202c;
+  box-shadow: 0 10px 24px rgba(213, 43, 54, 0.36);
+  outline: 3px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 3px;
+  transform: translateY(-2px);
+}
+
+.primary-button span {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.emblem {
+  position: absolute;
+  right: clamp(44px, 10vw, 132px);
+  top: 50%;
+  width: clamp(160px, 24vw, 270px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.emblem-ring {
+  position: absolute;
+  inset: 12%;
+  border: 2px solid rgba(244, 185, 66, 0.62);
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(244, 185, 66, 0.1), inset 0 0 30px rgba(244, 185, 66, 0.08);
+}
+
+.emblem-letter {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: clamp(5rem, 12vw, 8rem);
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.emblem-caption {
+  position: absolute;
+  bottom: 14%;
+  color: #f3c45c;
+  font-size: clamp(0.43rem, 1vw, 0.63rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+
+.color-orbit {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.08);
+}
+
+.orbit-red {
+  top: 18%;
+  right: 12%;
+  background: var(--hero-red);
+}
+
+.orbit-blue {
+  right: 8%;
+  bottom: 21%;
+  background: var(--hero-blue);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.value-card {
+  min-height: 148px;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--value-color);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(16, 26, 43, 0.05);
+}
+
+.value-red {
+  --value-color: var(--hero-red);
+}
+
+.value-blue {
+  --value-color: var(--hero-blue);
+}
+
+.value-gold {
+  --value-color: #d89a17;
+}
+
+.value-mark {
+  color: var(--value-color);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.value-card h2 {
+  margin: 9px 0 5px;
+  color: var(--hero-ink);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.08rem;
+}
+
+.value-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .welcome-card {
+    min-height: 390px;
+  }
+
+  .emblem {
+    right: -36px;
+    opacity: 0.25;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card {
+    min-height: auto;
+  }
+}
